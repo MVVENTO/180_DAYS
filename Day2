@@ -1,0 +1,27 @@
+<DOCTYPE! html>
+
+<html>
+<header>
+    <script src="js/script.js"></script>
+<TITLE> WE ARE ONE </TITLE>
+</header>
+<body>
+<CENTER>
+<button onclick="revealMessage()"> BOOP </button>
+
+<p id="hiddenMessage" style="display:none"> 
+<TABLE>
+<TR>
+<TD> 
+<UL>
+<font face="Helvetica"
+color="#515BA1"> WELCOME TO THE 5TH DIMENSION </font> 
+</UL></TD>
+</TR>
+</TABLE>
+<IMG SRC="IMAGES/bananacat.gif" > 
+ </p>
+ 
+</CENTER>
+</body>
+</html>
