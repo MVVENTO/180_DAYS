@@ -1,0 +1,40 @@
+//: A UIKit based Playground for presenting user interface
+import UIKit
+
+
+
+func Bmi(height : Int, weight : Int)-> String{
+    
+    let height2 = height * height
+    
+    let bmi : Float = (Float(weight) / Float(height2) * 703)
+    
+    
+    
+    if (bmi > 25) {
+        
+        return " Your bmi is \(bmi), you are obese."
+        
+    }
+        
+    else if ( bmi > 18.5 && bmi <= 25) {
+        
+        return "Your bmi is \(bmi), you are normal weight."
+        
+    }
+        
+    else {
+        
+        return "Your bmi is \(bmi), you are Underweight!"
+        
+    }
+    
+}
+
+
+
+// Enter height in inches(6' 1" = 73,  and weight in US pounds., 128) as Integers
+
+print(Bmi(height: 66, weight: 133))
+
+
