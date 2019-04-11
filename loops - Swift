@@ -1,0 +1,17 @@
+import UIKit
+
+let ageOfDogs =  [1,5,3,6,7,234,34]
+
+var sum = 0
+
+for age in ageOfDogs {
+  sum += age
+ 
+}
+
+ print(sum)
+
+
+for number in 1..<10{
+    print(number)
+}
