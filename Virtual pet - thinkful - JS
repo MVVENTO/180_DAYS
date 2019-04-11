@@ -1,0 +1,96 @@
+//// basic JS
+
+let firstVar = 20
+let secondVar = firstVar +3
+let thirdVar = "Jason"
+let fourthVar = true
+              //  0,      1,       2, 
+let fifthVar = ['milk', 'eggs', true, 33, 'flour']
+let sixthVar = {
+  name: 'jason',
+  age: 55,
+  isTall: true
+}
+
+console.log(thirdVar)
+
+//////////// basics
+
+let name = 'name'
+
+function addTogether(first,last){
+  console.log(first + " " + last)
+  
+}
+addTogether('Jason' , 'Humphrey' , 150)
+
+/////////////// more basics
+
+function petWeight(pet_weight) { 
+  if (pet_weight > 150) {
+    console.log("Your pet is obese.");
+  } else {
+    console.log("Your pet is in great shape");
+  }
+}
+let pet_weight = 150;
+
+
+////////////////// test Virtual Pet code
+$(function() {
+ 
+  // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
+   let pet_info = {
+     name: 'Mochi',
+     weight: 150, 
+     happiness: 5, 
+  
+   }
+     name:
+  // Called function to update the name, happiness, and weight of our pet in our HTML
+  checkAndUpdatePetInfoInHtml();
+
+  // When each button is clicked, it will "call" function for that button (functions are below)
+  $('.treat-button').click(clickedTreatButton);
+  $('.play-button').click(clickedPlayButton);
+  $('.exercise-button').click(clickedExerciseButton);
+  
+
+
+
+  function clickedTreatButton() {
+    // Increase pet happiness
+    // Increase pet weight
+    checkAndUpdatePetInfoInHtml();
+  }
+  
+  function clickedPlayButton() {
+    // Increase pet happiness
+    // Decrease pet weight
+    checkAndUpdatePetInfoInHtml();
+  }
+  
+  function clickedExerciseButton() {
+    // Decrease pet happiness
+    // Decrease pet weight
+    checkAndUpdatePetInfoInHtml();
+  }
+
+  function checkAndUpdatePetInfoInHtml() {
+    checkWeightAndHappinessBeforeUpdating();  
+    updatePetInfoInHtml();
+  }
+  
+  function checkWeightAndHappinessBeforeUpdating() {
+    // Add conditional so if weight is lower than zero, set it back to zero
+  }
+  
+  // Updates your HTML with the current values in your pet_info object
+  function updatePetInfoInHtml() {
+    $('.name').text(pet_info.name);
+    $('.weight').text(pet_info.weight);
+    $('.happiness').text(pet_info.happiness);
+  }
+})
+
+
