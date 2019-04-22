@@ -28,3 +28,35 @@ class ViewController: UIViewController{
         }
     }
 }
+
+
+
+
+//
+
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController, AVAudioPlayerDelegate {
+    
+    var audioplayer: AVAudioPlayer!
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+
+@IBAction func notePressed(_ sender: UIButton) {
+    
+    let soundURL = Bundle.main.url(forResource: "note1", withExtension: "wav")
+    do {
+        audioplayer = try AVAudioPlayer(contentsOf: soundURL!)
+    }
+    catch {
+        print(error)
+    }
+    audioplayer.play()
+    
+    }
+      
+}
