@@ -7,74 +7,6 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController{
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-
-
-    @IBAction func notePressed(_ sender: UIButton) {
-        
-        print(sender.tag)
-        
-        if sender.tag == 1 {
-            print("play middle C")
-        }
-        else if sender.tag == 2 {
-            print("play D")
-        }
-    }
-}
-
-
-
-
-//
-
-import UIKit
-import AVFoundation
-
-class ViewController: UIViewController, AVAudioPlayerDelegate {
-    
-    var audioplayer: AVAudioPlayer!
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-
-@IBAction func notePressed(_ sender: UIButton) {
-    
-    let soundURL = Bundle.main.url(forResource: "note1", withExtension: "wav")
-    do {
-        audioplayer = try AVAudioPlayer(contentsOf: soundURL!)
-    }
-    catch {
-        print(error)
-    }
-    audioplayer.play()
-    
-    }
-      
-}
-
-
-
-
-
-
-//
-//  ViewController.swift
-//  Xylophone
-//
-//  Created by Angela Yu on 27/01/2016.
-//  Copyright © 2016 London App Brewery. All rights reserved.
-//
-
-import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
@@ -82,7 +14,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioplayer: AVAudioPlayer!
     var selectedSoundFileName : String = ""
     let soundArray = ["note1","note2","note3","note4","note5","note6","note7"]
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -90,17 +22,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func notePressed(_ sender: UIButton) {
         
-        var selectedSoundFileName : String = soundArray[0]
-        
-        print(selectedSoundFileName)
-    
-        
-        playSound()
+        playSound(noteSenderTag: sender.tag )
     }
     
-    func playSound() {
+        func playSound(noteSenderTag : Int) {
     
-        let soundURL = Bundle.main.url(forResource: selectedSoundFileName , withExtension: "wav")
+        let soundURL = Bundle.main.url(forResource: "note\(noteSenderTag)" , withExtension: "wav")
     do {
         audioplayer = try AVAudioPlayer(contentsOf: soundURL!)
     }
@@ -112,5 +39,4 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
       
 }
-
 
